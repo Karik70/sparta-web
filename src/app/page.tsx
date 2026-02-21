@@ -1,0 +1,448 @@
+import Image from "next/image";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen font-sans">
+      {/* Hero Section */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/assets/sparta-group.jpg"
+            alt="Sparta Taekwondo Team"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <div className="inline-block px-4 py-1 mb-6 border border-accent/30 rounded-full bg-accent/10 backdrop-blur-sm">
+            <span className="text-accent text-sm font-bold tracking-widest uppercase">
+              Астана • Таэквондо GTF
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-8xl font-black mb-6 leading-tight">
+            СТАНЬ ЧАСТЬЮ <br />
+            <span className="text-gradient">КОМАНДЫ SPARTA</span>
+          </h1>
+          <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Sparta — это не просто команда, это стиль жизни. Мы воспитываем характер,
+            силу воли и лидерские качества через искусство таэквондо.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#apply"
+              className="px-8 py-4 bg-accent hover:bg-accent-muted text-white rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(230,25,25,0.4)]"
+            >
+              ЗАПИСАТЬСЯ НА ПРОБНОЕ
+            </a>
+            <a
+              href="#schedule"
+              className="px-8 py-4 glass hover:bg-white/10 text-white rounded-full font-bold transition-all"
+            >
+              РАСПИСАНИЕ ЗАЛОВ
+            </a>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+          <div className="w-1 h-12 rounded-full bg-gradient-to-b from-white to-transparent" />
+        </div>
+      </section>
+
+      {/* Trainer / About Section */}
+      <section id="about" className="py-24 px-4 bg-background relative overflow-hidden">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-accent/20 rounded-2xl blur-2xl group-hover:bg-accent/30 transition-all duration-500" />
+            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <Image
+                src="/assets/trainer-ruslan.jpg"
+                alt="Алмашев Руслан Мырзабаевич"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-accent font-bold mb-4 tracking-widest underline decoration-2 underline-offset-8">
+              ГЛАВНЫЙ ТРЕНЕР
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 leading-tight uppercase tracking-tight">
+              АЛМАШЕВ РУСЛАН МЫРЗАБАЕВИЧ
+            </h3>
+            <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
+              <p>
+                <span className="text-white font-bold">Черный пояс 4 Дан</span> – сертифицированный тренер по таэквондо GTF с более чем
+                <span className="text-accent font-bold"> 15-летним стажем</span>.
+              </p>
+              <p>
+                Вице-президент Федерации таэквондо GTF г. Астаны и главный судья крупных городских и республиканских турниров.
+              </p>
+              <p>
+                За годы практики Руслан воспитал десятки спортсменов, среди которых Кандидаты в мастера спорта и Мастера спорта.
+                Его ученики — победители и призёры международных соревнований.
+              </p>
+              <div className="grid grid-cols-2 gap-8 pt-6">
+                <div>
+                  <div className="text-4xl font-black text-white mb-2 underline decoration-accent/30 decoration-8 underline-offset-[-2px]">15+</div>
+                  <div className="text-sm uppercase tracking-tighter opacity-60">Лет стажа</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-black text-white mb-2 underline decoration-accent/30 decoration-8 underline-offset-[-2px]">400+</div>
+                  <div className="text-sm uppercase tracking-tighter opacity-60">Учеников</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Section */}
+      <section id="programs" className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-accent font-bold mb-4 tracking-widest">ПРОГРАММЫ</h2>
+            <h3 className="text-4xl md:text-5xl font-black mb-6">ДЛЯ ЛЮБОГО ВОЗРАСТА</h3>
+            <p className="text-foreground/60 max-w-2xl mx-auto">
+              Мы предлагаем специализированные методики обучения, адаптированные под уровень подготовки и возраст спортсмена.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "ДЕТСКАЯ ГРУППА",
+                age: "4-7 лет",
+                desc: "Развитие координации, гибкости и основ дисциплины в игровой форме.",
+                icon: "🥋"
+              },
+              {
+                title: "ПОДРОСТКОВАЯ ГРУППА",
+                age: "8-16 лет",
+                desc: "Углубленное изучение техники, подготовка к соревнованиям и аттестациям на пояса.",
+                icon: "🔥"
+              },
+              {
+                title: "ИНДИВИДУАЛЬНО",
+                age: "Любой возраст",
+                desc: "Персональный график и программа для максимально быстрого прогресса.",
+                icon: "🏆"
+              }
+            ].map((program, idx) => (
+              <div key={idx} className="glass p-10 rounded-3xl hover:border-accent/40 transition-all group">
+                <div className="text-5xl mb-6">{program.icon}</div>
+                <h4 className="text-2xl font-black mb-2">{program.title}</h4>
+                <div className="text-accent text-sm font-bold mb-4 uppercase tracking-wider">{program.age}</div>
+                <p className="text-foreground/70 mb-8">{program.desc}</p>
+                <button className="text-white font-bold inline-flex items-center gap-2 group-hover:text-accent transition-colors">
+                  ПОДРОБНЕЕ <span>→</span>
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Halls & Schedule Section */}
+      <section id="schedule" className="py-24 px-4 bg-zinc-900/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="text-accent font-bold mb-4 tracking-widest">ФИЛИАЛЫ</h2>
+              <h3 className="text-4xl md:text-5xl font-black">РАСПИСАНИЕ В АСТАНЕ</h3>
+            </div>
+            <p className="text-foreground/50 max-w-sm">
+              Выберите удобный для вас зал и время тренировок. Мы находимся в самых доступных точках города.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Asia City & Bayynkol */}
+            <div className="space-y-8">
+              {[
+                {
+                  name: "ТЦ Азия Сити",
+                  addr: "г. Астана, ул. Абылай хана, 27/3",
+                  time: [
+                    "Вт, Чт: 19:30 - 21:00",
+                    "Сб: 10:00 - 11:30"
+                  ]
+                },
+                {
+                  name: "Байынкол переулок, 9",
+                  addr: "г. Астана, пер. Байынкол, 9",
+                  time: [
+                    "Пн, Ср, Пт: 19:00 - 20:30"
+                  ]
+                }
+              ].map((hall, idx) => (
+                <div key={idx} className="glass p-8 rounded-2xl border-l-4 border-l-accent">
+                  <h4 className="text-xl font-black mb-2">{hall.name}</h4>
+                  <p className="text-foreground/50 text-sm mb-4">{hall.addr}</p>
+                  <ul className="space-y-1">
+                    {hall.time.map((t, i) => (
+                      <li key={i} className="text-foreground/80 font-medium">🕒 {t}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* Azilkhan, Highvil, Space School */}
+            <div className="space-y-8">
+              {[
+                {
+                  name: "Ул. Азильхан Нуршаихов, 10/1",
+                  addr: "г. Астана, ул. Азильхан Нуршаихов, 10/1",
+                  time: [
+                    "Вт, Чт, Сб: 10:00 - 11:30",
+                    "Пн, Ср, Пт: 16:00 - 17:30"
+                  ]
+                },
+                {
+                  name: "ЖК Хайвил Астана (Easy Study)",
+                  addr: "ул. Ахмет Байтурсынулы, 1, блок А",
+                  time: [
+                    "Вт, Чт: 18:00 - 19:00",
+                    "Сб: 12:45 - 13:45"
+                  ]
+                }
+              ].map((hall, idx) => (
+                <div key={idx} className="glass p-8 rounded-2xl border-l-4 border-l-white/20">
+                  <h4 className="text-xl font-black mb-2">{hall.name}</h4>
+                  <p className="text-foreground/50 text-sm mb-4">{hall.addr}</p>
+                  <ul className="space-y-1">
+                    {hall.time.map((t, i) => (
+                      <li key={i} className="text-foreground/80 font-medium">🕒 {t}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-24 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-between items-end mb-16">
+            <div>
+              <h2 className="text-accent font-bold mb-4 tracking-widest">ГАЛЕРЕЯ</h2>
+              <h3 className="text-4xl md:text-5xl font-black">ЖИЗНЬ В СПАРТЕ</h3>
+            </div>
+            <a
+              href="https://6379c9c8481222-76340701.gallery.photo/gallery/sparta/"
+              target="_blank"
+              className="hidden md:block px-6 py-3 glass hover:bg-white/10 rounded-full text-sm font-bold transition-all"
+            >
+              СМОТРЕТЬ ВСЕ ФОТО
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px]">
+            <div className="relative col-span-2 row-span-2 rounded-3xl overflow-hidden group">
+              <Image
+                src="/assets/sparta-group.jpg"
+                alt="Sparta Group"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-8 flex items-end">
+                <p className="font-bold text-xl uppercase tracking-widest text-white">Командный дух</p>
+              </div>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden group">
+              <Image
+                src="/assets/trainer-ruslan.jpg"
+                alt="Trainer Ruslan"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+            </div>
+            <div className="relative rounded-3xl overflow-hidden group border border-white/5">
+              <Image 
+                src="/assets/team-awards.jpg" 
+                alt="Sparta Team Awards" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6 flex items-end">
+                <p className="font-bold text-sm uppercase tracking-widest text-white">Наши победы</p>
+              </div>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden group bg-zinc-900 border border-white/5 flex items-center justify-center">
+              <span className="text-6xl">🏆</span>
+            </div>
+            <div className="relative rounded-3xl overflow-hidden group">
+              <Image
+                src="/assets/sparta-group.jpg"
+                alt="Training"
+                fill
+                className="object-cover brightness-50 contrast-125"
+              />
+              <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
+                <p className="font-black text-xs uppercase tracking-tighter opacity-50">Дисциплина • Уважение • Сила</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 md:hidden text-center">
+            <a
+              href="https://6379c9c8481222-76340701.gallery.photo/gallery/sparta/"
+              target="_blank"
+              className="inline-block px-8 py-4 glass hover:bg-white/10 rounded-full text-sm font-bold transition-all"
+            >
+              СМОТРЕТЬ ВСЮ ГАЛЕРЕЮ
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials (Short) */}
+      <section className="py-24 px-4 bg-zinc-900/30">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="mb-12 inline-flex items-center gap-2">
+            {[1, 2, 3, 4, 5].map(s => <span key={s} className="text-accent text-2xl">★</span>)}
+          </div>
+          <blockquote className="text-2xl md:text-3xl font-bold leading-relaxed mb-8 italic text-white/90">
+            «Мы очень рады, что выбрали именно Спарту. Руслан Мырзабаевич находит подход к каждому ребенку.
+            Сын стал дисциплинированнее, сильнее и, самое главное, он с нетерпением ждет каждой тренировки!»
+          </blockquote>
+          <cite className="not-italic text-accent font-bold tracking-widest uppercase">— Семья Касеновых, родители ученика</cite>
+        </div>
+      </section>
+
+      {/* Detailed Contact / Application Section */}
+      <section id="contact" className="py-24 px-4 relative">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 blur-[150px] rounded-full -z-10" />
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+          <div>
+            <h2 className="text-accent font-bold mb-4 tracking-widest">КОНТАКТЫ</h2>
+            <h3 className="text-5xl md:text-6xl font-black mb-8 leading-tight">НУЖНА КОНСУЛЬТАЦИЯ?</h3>
+            <p className="text-foreground/70 text-lg mb-12">
+              Оставьте свои данные, и мы свяжемся с вами, чтобы подобрать удобную группу и ответить на все вопросы о пробном занятии.
+            </p>
+
+            <div className="space-y-8">
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-12 glass flex items-center justify-center rounded-xl text-accent text-xl">📍</div>
+                <div>
+                  <h4 className="font-bold mb-1">АДРЕСА</h4>
+                  <p className="text-foreground/60 text-sm">ТЦ Азия Сити, ЖК Хайвил, Байынкол 9 и др. (г. Астана)</p>
+                </div>
+              </div>
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-12 glass flex items-center justify-center rounded-xl text-accent text-xl">📞</div>
+                <div>
+                  <h4 className="font-bold mb-1">ТЕЛЕФОН</h4>
+                  <p className="text-foreground/60 text-sm">+7 (701) XXX-XX-XX</p>
+                </div>
+              </div>
+              <div className="flex gap-6 items-start">
+                <div className="w-12 h-12 glass flex items-center justify-center rounded-xl text-accent text-xl">📱</div>
+                <div>
+                  <h4 className="font-bold mb-1">СОЦСЕТИ</h4>
+                  <div className="flex gap-4 mt-2">
+                    <a href="#" className="text-white hover:text-accent font-bold text-xs uppercase tracking-widest">Instagram</a>
+                    <a href="#" className="text-white hover:text-accent font-bold text-xs uppercase tracking-widest">WhatsApp</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="apply-form" className="glass p-10 md:p-12 rounded-[40px] border border-white/10 relative">
+            <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent rotate-12 flex items-center justify-center rounded-2xl shadow-xl">
+              <span className="text-white font-black text-2xl">FREE</span>
+            </div>
+            <h4 className="text-2xl font-black mb-8 uppercase tracking-tight">Запись на пробное занятие</h4>
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-widest">Ваше имя</label>
+                  <input type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-accent/50 transition-colors" placeholder="Иван Иванов" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-widest">Ваш телефон</label>
+                  <input type="tel" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-accent/50 transition-colors" placeholder="+7 (___) ___-__-__" />
+                </div>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-widest">Имя ребенка</label>
+                  <input type="text" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-accent/50 transition-colors" placeholder="Александр" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-widest">Возраст ребенка</label>
+                  <input type="number" className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-accent/50 transition-colors" placeholder="7" />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold text-foreground/40 uppercase tracking-widest">Выберите филиал</label>
+                <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-accent/50 transition-colors appearance-none">
+                  <option className="bg-zinc-900">ТЦ Азия Сити</option>
+                  <option className="bg-zinc-900">Байынкол переулок, 9</option>
+                  <option className="bg-zinc-900">Азильхан Нуршаихов, 10/1</option>
+                  <option className="bg-zinc-900">ЖК Хайвил Астана</option>
+                  <option className="bg-zinc-900">Space School (Туран)</option>
+                </select>
+              </div>
+              <button type="submit" className="w-full py-5 bg-accent hover:bg-accent-muted text-white font-black rounded-2xl transition-all transform hover:scale-[1.02] shadow-[0_10px_30px_rgba(230,25,25,0.3)] uppercase tracking-widest mt-4">
+                ОТПРАВИТЬ ЗАЯВКУ
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-20 px-4 bg-background border-t border-white/5 overflow-hidden relative">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-12 mb-20">
+            <div className="text-center md:text-left">
+              <h4 className="text-3xl font-black tracking-tighter mb-4 italic">
+                SPARTA <span className="text-accent underline decoration-white/20">TEAM</span>
+              </h4>
+              <p className="text-foreground/40 max-w-xs text-sm leading-relaxed">
+                Школа таэквондо Руслана Алмашева в Астане. Мы воспитываем чемпионов с 2010 года.
+              </p>
+            </div>
+
+            <nav className="flex flex-wrap justify-center gap-x-12 gap-y-4 font-bold text-xs uppercase tracking-[0.2em] text-foreground/60">
+              <a href="#" className="hover:text-accent transition-colors">Главная</a>
+              <a href="#about" className="hover:text-accent transition-colors">О тренере</a>
+              <a href="#programs" className="hover:text-accent transition-colors">Программы</a>
+              <a href="#schedule" className="hover:text-accent transition-colors">Расписание</a>
+              <a href="#gallery" className="hover:text-accent transition-colors">Галерея</a>
+            </nav>
+
+            <div className="flex gap-6 items-center">
+              <a href="#" className="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all">
+                <span className="text-xs">IG</span>
+              </a>
+              <a href="#" className="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all">
+                <span className="text-xs">WA</span>
+              </a>
+              <a href="#" className="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-white/10 transition-all">
+                <span className="text-xs">TG</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-white/5 opacity-30 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <p>© 2026 SPARTA TAEKWONDO. ALL RIGHTS RESERVED.</p>
+            <p>DESIGN & DEV BY ANTIGRAVITY AI</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
+}
